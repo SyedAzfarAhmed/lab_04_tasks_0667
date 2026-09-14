@@ -1,0 +1,21 @@
+#include <stdio.h>
+int main()
+{
+    float bill;
+    int hour;
+    printf("Enter the current total bill: ");
+    scanf("%f", &bill);
+    printf("Enter the current hour: ");
+    scanf("%d", &hour);
+    if (hour>= 11 && hour<=14)
+    {
+        bill=bill-(bill*0.10);
+        printf("10% discount applied!\n");
+        printf("Discounted total: %f", bill);
+    }
+    else
+    {
+        printf("No discount applied.\n");
+        printf("Original total: %f", bill);
+    }
+}

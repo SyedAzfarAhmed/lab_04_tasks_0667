@@ -1,0 +1,24 @@
+#include <stdio.h>
+int main()
+{
+    float total;
+    int option;
+    printf("Enter the order total: ");
+    scanf("%f", &total);
+    printf("Fulfillment Option (1. Pickup, 2. Delivery): ");
+    scanf("%d", &option);
+    if (option==2)
+    {
+        total=total+3;
+    }
+    else if (option==1)
+    {
+        total=total+0;
+    }
+    else
+    {
+        printf("Invalid option!\n");
+        return 1;
+    }
+    printf("Final total cost: %f", total);
+}

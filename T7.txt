@@ -1,0 +1,19 @@
+#include <stdio.h>
+int main()
+{
+    float bill;
+    char student;
+    printf("Enter the current bill total: ");
+    scanf("%f", &bill);
+    printf("Do you have a student ID? (Y/N): ");
+    scanf(" %c", &student);
+    if (student == 'Y')
+    {
+        bill=bill-2;
+    }
+    if (bill<0)
+    {
+        bill=0;
+    }
+    printf("Final bill total: $%.2f", bill);
+}

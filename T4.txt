@@ -1,0 +1,23 @@
+ #include<stdio.h>
+int main()
+{
+    int cost, a;
+    printf("Enter the current total cost of the order: ");
+    scanf("%d", &cost);
+    printf("Choose your crust: ");
+    scanf("%d", &a);
+    if(a==1)
+    {
+        printf("Your total bill is %d", cost+1);     
+    }
+    else if(a==2)
+    {
+        printf("Your total bill is %d", cost+2);
+    }
+    else if (a==3)
+    printf("Your total bill is %d", cost+3);
+    else
+    {
+        printf("Your total bill is %d", cost);
+    }
+}

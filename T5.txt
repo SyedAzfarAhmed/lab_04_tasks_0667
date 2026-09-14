@@ -1,0 +1,23 @@
+#include <stdio.h>
+int main()
+{
+    float cost;
+    char choice;
+    printf("Enter the current order total: ");
+    scanf("%f", &cost);
+    printf("Do you want extra cheese (Y/N)? ");
+    scanf(" %c", &choice);
+    if (choice=='Y')
+    {
+        cost = cost + 1.50;
+        printf("total: %f", cost);
+    }
+    else if (choice=='N')
+    {
+        printf("total %.2f", cost);
+    }
+    else
+    {
+        printf("Invalid choice");
+    }
+}
