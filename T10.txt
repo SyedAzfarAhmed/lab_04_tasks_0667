@@ -1,0 +1,166 @@
+#include <stdio.h>
+
+int main()
+{
+    int size, quantity, crust, hour, student, fulfillment;
+    char cheese;
+    float total = 0;
+    char sizeName[10], crustName[10];
+
+    printf("WELCOME TO SLICE AND DICE PIZZA\n");
+    printf("Select pizza size (1.Small, 2.Medium, 3.Large): ");
+    scanf("%d", &size);
+
+    if (size < 1 || size > 3)
+    {
+        printf("Invalid size.\n");
+    }
+
+    if (size == 1)
+        printf("Small size selected.\n");
+    else if (size == 2)
+        printf("Medium size selected.\n");
+    else
+        printf("Large size selected.\n");
+
+    printf("How many pizzas (1-3): ");
+    scanf("%d", &quantity);
+
+    if (quantity < 1 || quantity > 3)
+    {
+        printf("Invalid quantity.\n");
+    }
+
+    if (quantity == 1)
+        total = 8;
+    else if (quantity == 2)
+        total = 15;
+    else
+        total = 21;
+
+    printf("Base price: $%f\n", total);
+
+    printf("Select crust (1.Regular, 2.Thin, 3.Stuffed): ");
+    scanf("%d", &crust);
+
+    if (crust == 1)
+    {
+        total = total + 0;
+        printf("Regular crust selected (+$0.00)\n");
+    }
+    else if (crust == 2)
+    {
+        total = total + 1;
+        printf("Thin crust selected (+$1.00)\n");
+    }
+    else if (crust == 3)
+    {
+        total = total + 2;
+        printf("Stuffed crust selected (+$2.00)\n");
+    }
+    else
+    {
+        printf("Invalid crust.\n");
+        return 0;
+    }
+
+    printf("Extra cheese (Y/N): ");
+    scanf(" %c", &cheese);
+
+    if (cheese == 'Y' || cheese == 'y')
+    {
+        total = total + 1.50;
+        printf("Extra cheese added (+$1.50)\n");
+    }
+    else if (cheese == 'N' || cheese == 'n')
+    {
+        printf("No extra cheese.\n");
+    }
+    else
+    {
+        printf("Invalid cheese choice.\n");
+        return 0;
+    }
+
+    printf("Enter current hour (0-23): ");
+    scanf("%d", &hour);
+
+    if (hour >= 11 && hour <= 14)
+    {
+        total = total - (total * 0.10);
+        printf("Happy Hour 10% discount applied!\n");
+    }
+
+    printf("Student ID (Y/N): ");
+    scanf(" %c", &student);
+
+    if (student == 'Y' || student == 'y')
+    {
+        total = total - 2;
+        printf("Student discount applied! (-$2.00)\n");
+    }
+
+    if (total < 0)
+        total = 0;
+
+    if (quantity == 3 && crust == 3)
+        printf("You get free garlic bread!\n");
+
+
+    printf("Fulfillment (1.Pickup, 2.Delivery): ");
+    scanf("%d", &fulfillment);
+
+    if (fulfillment == 2)
+    {
+        total = total + 3;
+        printf("Delivery selected (+$3.00)\n");
+    }
+    else if (fulfillment == 1)
+    {
+        printf("Pickup selected.\n");
+    }
+    else
+    {
+        printf("Invalid fulfillment option.\n");
+    }
+    printf("             ORDER RECEIPT\n");
+
+    if (size == 1)
+        printf("Pizza Size: Small\n");
+    else if (size == 2)
+        printf("Pizza Size: Medium\n");
+    else
+        printf("Pizza Size: Large\n");
+
+    printf("Quantity: %d pizza(s)\n", quantity);
+
+    if (crust == 1)
+        printf("Crust Type: Regular\n");
+    else if (crust == 2)
+        printf("Crust Type: Thin\n");
+    else
+        printf("Crust Type: Stuffed\n");
+
+    if (cheese == 'Y' || cheese == 'y')
+        printf("Extra Cheese: Yes\n");
+    else
+        printf("Extra Cheese: No\n");
+
+    if (student == 'Y' || student == 'y')
+        printf("Student ID: Yes\n");
+    else
+        printf("Student ID: No\n");
+
+    if (fulfillment == 1)
+        printf("Fulfillment: Pickup\n");
+    else
+        printf("Fulfillment: Delivery\n");
+
+    if (quantity == 3 && crust == 3)
+        printf("BONUS: Free Garlic Bread included!\n");
+
+    printf("FINAL TOTAL: $%f\n", total);
+    printf("Thank you for dining with us!\n");
+
+    return 0;
+}
